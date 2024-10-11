@@ -26,16 +26,24 @@ let i = 0;
 
 function calculateScores(answers: number[]): Array<[string, number]> {
   const scores = new Array();
+  let max = 0;
+
   for (const [party, averages] of Object.entries(partyMap)) {
     let score = 0;
     for (let i = 0; i < questions.length; i++) {
       score += Math.pow(averages[i] - answers[i], 2);
     }
     score = Math.sqrt(score);
+
+    if (score > max) max = score;
     scores.push([party, score]);
   }
 
-  return scores.sort((a, b) => a[1] - b[1]);
+  for (let i = 0; i < scores.length; i++) {
+    scores[i][1] = 100 - (scores[i][1] / max) * 100;
+  }
+
+  return scores.sort((a, b) => b[1] - a[1]);
 }
 
 function updateQuestion() {
@@ -57,7 +65,7 @@ function showResults() {
     const label = row.insertCell();
     label.innerText = party;
     const data = row.insertCell();
-    data.innerText = score.toFixed(1).toString();
+    data.innerText = score.toFixed(0).toString();
   }
 
   document.getElementById(
@@ -70,6 +78,7 @@ function reset() {
   answers.fill(0);
   document.getElementById("questions-page")!.style.display = "block";
   document.getElementById("results-page")!.style.display = "none";
+  document.getElementById("table")!.innerHTML = "";
   updateQuestion();
 }
 
