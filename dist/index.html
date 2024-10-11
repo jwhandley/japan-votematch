@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japan votematch</title>
+  <script type="module" crossorigin src="/assets/index-XebTjhnR.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DmngYW8n.css">
+</head>
+
+<body>
+  <div id="questions-page">
+    <h3 id="heading" style="text-align: center;"></h2>
+    <p id="question" style="height: 3rem;"></p>
+    <div id="answer" style="display: flex; column-gap: 1.5rem; align-items: flex-start; width: 100%;">
+      <button data-value="1" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Agree</button>
+      <button data-value="2" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Somewhat agree</button>
+      <button data-value="3" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Not sure</button>
+      <button data-value="4" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Somewhat disagree</button>
+      <button data-value="5" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Disagree</button>
+    </div>
+  </div>
+  <div id="results-page" style="display: none;">
+    <h3 id="best-party"></h2>
+    <table style="margin: 0 auto;">
+      <thead><tr>
+        <th>Party</th>
+        <th>Score</th>
+      </tr></thead>
+      <tbody id="table"></tbody>
+    </table>
+    <p id="results"></p>
+    <button id="reset">Reset</button>
+  </div>
+</body>
+
+</html>
