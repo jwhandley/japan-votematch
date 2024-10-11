@@ -6,35 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Japan votematch</title>
   <style>
+      #question {
+      margin: 16pt auto;
+      color: #eeeeee;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: normal;
+      width: 70%;
+      min-width: 500pt;
+      min-height: 144pt;
+      background-color: #333333;
+      padding: 16pt;
+      border-radius: 16pt;
+      font-size: 36pt;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+  }
+
     #answer {
       display: flex;
-      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-      gap: 1.5rem; /* Space between buttons */
-      justify-content: center; /* Center the buttons */
-      padding: 1rem; /* Padding around the button container */
-    }
-    
-    button {
-      flex-grow: 1; /* Allow buttons to grow */
-      flex-basis: calc(20% - 1.5rem); /* Set base width to 20% with space for gap */
-      max-width: 150px; /* Limit maximum button width */
-      height: 4rem; /* Fixed button height */
-      padding: 0.5rem; /* Add padding for better touch targets */
-      box-sizing: border-box; /* Include padding in width/height calculations */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
     }
 
-    footer {
-      text-align: center; /* Center text in footer */
-      padding: 1rem; /* Padding for footer */
+    button {
+      width: 35rem;
+    }
+
+    button[data-value="1"] {
+      background-color: #4CAF50; /* Green for Agree */
+      border: none;
+    }
+
+    button[data-value="2"] {
+      background-color: #66BB6A; /* Lighter green for Somewhat agree */
+      border: none;
+    }
+
+    button[data-value="3"] {
+      background-color: #B0BEC5; /* Grey for Not sure */
+      border: none;
+    }
+
+    button[data-value="4"] {
+      background-color: #EF5350; /* Red for Somewhat disagree */
+      border: none;
+    }
+
+    button[data-value="5"] {
+      background-color: #D32F2F; /* Darker red for Disagree */
+      border: none;
     }
   </style>
 </head>
 
 <body>
   <div id="questions-page">
-    <h3 id="heading" style="text-align: center;"></h2>
+    <h1 id="heading" style="text-align: center;"></h2>  
     <p id="question" style="height: 3rem;"></p>
-    <div id="answer" style="display: flex; column-gap: 1.5rem; align-items: flex-start;">
+    <div id="answer">
       <button data-value="1">Agree</button>
       <button data-value="2">Somewhat agree</button>
       <button data-value="3">Not sure</button>
