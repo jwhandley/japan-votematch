@@ -5,6 +5,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Japan votematch</title>
+  <style>
+    #answer {
+      display: flex;
+      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+      gap: 1.5rem; /* Space between buttons */
+      justify-content: center; /* Center the buttons */
+      padding: 1rem; /* Padding around the button container */
+    }
+    
+    button {
+      flex-grow: 1; /* Allow buttons to grow */
+      flex-basis: calc(20% - 1.5rem); /* Set base width to 20% with space for gap */
+      max-width: 150px; /* Limit maximum button width */
+      height: 4rem; /* Fixed button height */
+      padding: 0.5rem; /* Add padding for better touch targets */
+      box-sizing: border-box; /* Include padding in width/height calculations */
+    }
+
+    footer {
+      text-align: center; /* Center text in footer */
+      padding: 1rem; /* Padding for footer */
+    }
+  </style>
 </head>
 
 <body>
@@ -12,11 +35,11 @@
     <h3 id="heading" style="text-align: center;"></h2>
     <p id="question" style="height: 3rem;"></p>
     <div id="answer" style="display: flex; column-gap: 1.5rem; align-items: flex-start;">
-      <button data-value="1" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Agree</button>
-      <button data-value="2" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Somewhat agree</button>
-      <button data-value="3" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Not sure</button>
-      <button data-value="4" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Somewhat disagree</button>
-      <button data-value="5" style="flex-grow: 1; flex-basis: 0; height: 4rem;">Disagree</button>
+      <button data-value="1">Agree</button>
+      <button data-value="2">Somewhat agree</button>
+      <button data-value="3">Not sure</button>
+      <button data-value="4">Somewhat disagree</button>
+      <button data-value="5">Disagree</button>
     </div>
   </div>
   <div id="results-page" style="display: none;">
@@ -32,7 +55,7 @@
     <button id="reset">Reset</button>
   </div>
   <footer>
-    <p>All questions are taken from the <a href="https://www.masaki.j.u-tokyo.ac.jp/utas/utasindex_en.html" target="_blank">University of Tokyo - Asahi Shimbun joint survey</a> of Japanese legislators run by Professor Taniguchi Masaki. I compare your answers to the averages of each major political party's candidates in the 2021 House of Representatives Election to find your best match!</p>
+    <p>All questions are taken from the <a href="https://www.masaki.j.u-tokyo.ac.jp/utas/utasindex_en.html" target="_blank">University of Tokyo - Asahi Shimbun joint survey</a> of Japanese legislators run by Professor Taniguchi Masaki.  I compare your answers to the averages of each major political party's candidates in the 2021 House of Representatives Election to find your best match!</p>
   </footer>
   <script type="module" src="/src/main.ts"></script>
 </body>
