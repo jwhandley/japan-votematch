@@ -69,16 +69,18 @@
       <button class="question" data-value="5">Disagree</button>
     </div>
   </div>
-  <div id="results-page" style="display: none;">
+  <div id="results-page" style="display: none; flex-direction: column;">
     <h3 id="best-party"></h2>
-    <table style="margin: 0 auto;">
-      <thead><tr>
-        <th>Party</th>
-        <th>Score</th>
-      </tr></thead>
-      <tbody id="table"></tbody>
-    </table>
-    <p id="results"></p>
+    <div style="display: flex; flex-direction: row; padding: 1rem; margin: 1rem 1rem;">
+      <table style="margin: 0 auto;">
+        <thead><tr>
+          <th>Party</th>
+          <th>Score</th>
+        </tr></thead>
+        <tbody id="table"></tbody>
+      </table>
+      <img id="party-icon" width="300">
+    </div>
     <button id="reset">Reset</button>
   </div>
   <footer>

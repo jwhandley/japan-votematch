@@ -21,6 +21,35 @@ const questions = [
   "The bill promote greater awareness among the public of LGBT people should be passed as soon as possible.",
 ];
 
+type Party =
+  | "Liberal Democratic Party"
+  | "Komeito"
+  | "Democratic Party for the People"
+  | "Constitutional Democratic Party"
+  | "Reiwa Shinsengumi"
+  | "Social Democratic Party"
+  | "Communist Party"
+  | "Japan Innovation Party";
+
+const partyIcons = {
+  "Liberal Democratic Party":
+    "https://upload.wikimedia.org/wikipedia/commons/e/ef/Liberal_Democratic_Party_of_Japan_logo.svg",
+  Komeito:
+    "https://upload.wikimedia.org/wikipedia/commons/3/38/Komeito_Logo_%28Japan%29.svg",
+  "Democratic Party for the People":
+    "https://upload.wikimedia.org/wikipedia/commons/3/3d/Logo_of_Democratic_Party_For_the_People.svg",
+  "Constitutional Democratic Party":
+    "https://upload.wikimedia.org/wikipedia/commons/8/84/%E6%96%B0%E3%83%BB%E7%AB%8B%E6%86%B2%E6%B0%91%E4%B8%BB%E5%85%9A_%E3%83%AD%E3%82%B4.svg",
+  "Reiwa Shinsengumi":
+    "https://upload.wikimedia.org/wikipedia/commons/b/be/Logo_Reiwa.svg",
+  "Social Democratic Party":
+    "https://upload.wikimedia.org/wikipedia/commons/0/07/Logo_Social_Democratic_Party.svg",
+  "Communist Party":
+    "https://upload.wikimedia.org/wikipedia/commons/7/72/Japanese_Communist_Party_logo.svg",
+  "Japan Innovation Party":
+    "https://upload.wikimedia.org/wikipedia/commons/5/5d/Japan_Innovation_Party.svg",
+};
+
 const answers = new Array<number>(questions.length);
 let i = 0;
 
@@ -55,7 +84,7 @@ function showResults() {
   document.getElementById("questions-page")!.style.display = "none";
 
   const resultsPage = document.getElementById("results-page")!;
-  resultsPage.style.display = "block";
+  resultsPage.style.display = "flex";
 
   const results = calculateScores(answers);
   const table = document.getElementById("table")! as HTMLTableSectionElement;
@@ -67,7 +96,10 @@ function showResults() {
     const data = row.insertCell();
     data.innerText = score.toFixed(0).toString();
   }
-  const bestParty = results[0][0];
+  const bestParty = results[0][0] as Party;
+  const image = document.getElementById("party-icon") as HTMLImageElement;
+  image.setAttribute("src", partyIcons[bestParty]);
+
   if (bestParty === "Komeito" || bestParty == "Reiwa Shinsengumi") {
     document.getElementById(
       "best-party"
