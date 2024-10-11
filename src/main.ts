@@ -67,10 +67,16 @@ function showResults() {
     const data = row.insertCell();
     data.innerText = score.toFixed(0).toString();
   }
-
-  document.getElementById(
-    "best-party"
-  )!.innerText = `Your closest party is the ${results[0][0]}`;
+  const bestParty = results[0][0];
+  if (bestParty === "Komeito" || bestParty == "Reiwa Shinsengumi") {
+    document.getElementById(
+      "best-party"
+    )!.innerText = `Your closest party is ${results[0][0]}`;
+  } else {
+    document.getElementById(
+      "best-party"
+    )!.innerText = `Your closest party is the ${results[0][0]}`;
+  }
 }
 
 function reset() {
