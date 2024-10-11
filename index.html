@@ -6,31 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Japan votematch</title>
   <style>
-      #question {
-      margin: 16pt auto;
-      color: #eeeeee;
-      font-family: 'Montserrat', sans-serif;
+    #question {
+      margin: 1rem auto;
       font-weight: normal;
-      width: 70%;
-      min-width: 500pt;
-      min-height: 144pt;
       background-color: #333333;
-      padding: 16pt;
-      border-radius: 16pt;
-      font-size: 36pt;
+      padding: 1rem;
+      border-radius: 1rem;
+      font-size: 3rem;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-
-  }
+    }
 
     #answer {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 3rem;
+      font-size: 2rem;
     }
 
     button {
@@ -67,7 +61,7 @@
 <body>
   <div id="questions-page">
     <h1 id="heading" style="text-align: center;"></h2>  
-    <p id="question" style="height: 3rem;"></p>
+    <p id="question"></p>
     <div id="answer">
       <button data-value="1">Agree</button>
       <button data-value="2">Somewhat agree</button>

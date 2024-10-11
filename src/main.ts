@@ -5,7 +5,7 @@ const questions = [
   "Japan's defense capabilities should be strengthened.",
   "Japan should not hesitate to attack enemy bases if an attack from another country is expected.",
   "Pressure should take precedence over dialogue with North Korea.",
-  'The <a href="https://en.wikipedia.org/wiki/Three_Non-Nuclear_Principles" target="_blank">three non-nuclear principles</a> should be adhered to.',
+  `The <a href="https://en.wikipedia.org/wiki/Three_Non-Nuclear_Principles" target="_blank">three non-nuclear principles</a> should be adhered to.`,
   'The <a href="https://en.wikipedia.org/wiki/Relocation_of_Marine_Corps_Air_Station_Futenma" target="_blank">relocation of the Futenma base</a> in Okinawa Prefecture to Henoko is unavoidable.',
   "Smaller government that doesn't cost money is better, even if government services, such as social welfare, get worse.",
   "Job security through public works is necessary.",
