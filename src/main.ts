@@ -120,8 +120,26 @@ function reset() {
   updateQuestion();
 }
 
+function goBack() {
+  if (i == 0) {
+    reset();
+    return;
+  }
+
+  i--;
+  document.getElementById("questions-page")!.style.display = "block";
+  document.getElementById("results-page")!.style.display = "none";
+  document.getElementById("table")!.innerHTML = "";
+  updateQuestion();
+}
+
 document.getElementById("answer")!.addEventListener("click", (event) => {
   const clickedButton = event.target as HTMLButtonElement;
+  if (clickedButton.id == "back") {
+    goBack();
+    return;
+  }
+
   if (clickedButton.dataset.value) {
     answers[i] = Number(clickedButton.dataset.value);
     i++;
